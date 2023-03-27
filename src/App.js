@@ -1,12 +1,23 @@
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
+import News from './pages/News';
+import NewsDetails from './pages/NewsDetails';
+import NotFound from './pages/NotFound';
 import './App.scss';
-import Header from './components/Header/Header';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index path="news" element={<News />} />
+            <Route path="news/:newsId" element={<NewsDetails />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
