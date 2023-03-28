@@ -1,35 +1,32 @@
 // import styles from './NewsList.modules.scss';
-import Fetch from '../../utils/Fetch';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import Fetch from '../../utils/Fetch';
 
-const NewsList = ({ news }) => {
+const NewsList = ({ news, onUpdateNewsList }) => {
+  const storeNews = useSelector((state) => state.news.news);
   const [newsList, setNewsList] = useState([]);
 
-  useEffect(() => {
-    setNewsList(news);
-  }, [news]);
+  useEffect(()=> {
+    if (!storeNews.length) {
+      setNewsList(news);
+    } else {
+      setNewsList(storeNews);
+    }
+
+  }, [news, storeNews])
+
 
   useEffect(() => {
     const interval = setInterval(() => {
       console.log('update');
-      updateNewsList();
+      onUpdateNewsList();
     }, 60000);
     return () => clearInterval(interval);
-  }, []);
-
-  const updateNewsList = () => {
-    fetch('https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty')
-      .then((response) => response.json())
-      .then((data) => setNewsList(data.slice(0, 100)));
-  };
-
-  const handleUpdateClick = () => {
-    updateNewsList();
-  };
+  }, [onUpdateNewsList]);
 
   return (
     <div>
-      <button onClick={handleUpdateClick}>Update</button>
       <ul>
         {newsList.map((storyId) => (
           <Fetch
@@ -37,7 +34,7 @@ const NewsList = ({ news }) => {
             uri={`https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`}
             renderSuccess={({ data }) => (
               <li>
-                title: {data.title} <br /> 
+                title: {data.title} <br />
                 score: {data.score} <br />
                 by: {data.by} <br />
                 time: {data.time}

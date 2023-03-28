@@ -1,5 +1,4 @@
 import LogoImg from '../../assets/hacker-news.svg';
-import Button from '../UI/Button';
 import style from './Header.module.scss';
 
 const Header = (props) => {
@@ -14,8 +13,6 @@ const Header = (props) => {
           />
           <h1 className={style['header__title']}>Hacker News</h1>
         </div>
-
-        <Button>update news</Button>
       </div>
     </header>
   );
