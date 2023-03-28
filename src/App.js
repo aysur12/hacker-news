@@ -11,8 +11,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route index path="news" element={<News />} />
-            <Route path="news/:newsId" element={<NewsDetails />} />
+            <Route index element={<News />} />
+            <Route path="new-story/:newsId" element={<NewsDetails />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
