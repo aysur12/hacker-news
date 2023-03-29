@@ -16,7 +16,7 @@ const News = () => {
   };
 
   return (
-    <div>
+    <section>
       <Button onClick={updateNewsList}>update news</Button>
       <Fetch
         uri={'https://hacker-news.firebaseio.com/v0/newstories.json'}
@@ -27,7 +27,7 @@ const News = () => {
           />
         )}
       />
-    </div>
+    </section>
   );
 };
 
