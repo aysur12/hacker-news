@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 
 import Fetch from '../utils/Fetch';
 import NewsItem from '../components/NewsItem/NewsItem';
+import NewsContent from '../components/NewsContent/NewsContent';
 
 const NewsDetails = () => {
   const params = useParams();
@@ -12,6 +13,7 @@ const NewsDetails = () => {
         renderSuccess={({ data }) => (
           <>
             <NewsItem data={data} />
+            <NewsContent data={data}/>
           </>
         )}
       />

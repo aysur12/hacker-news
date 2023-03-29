@@ -31,7 +31,11 @@ const NewsList = ({ news, onUpdateNewsList }) => {
           <Fetch
             key={storyId}
             uri={`https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`}
-            renderSuccess={({ data }) => <NewsItem data={data} />}
+            renderSuccess={({ data }) => (
+              <li>
+                <NewsItem data={data} />
+              </li>
+            )}
           />
         ))}
       </ul>
