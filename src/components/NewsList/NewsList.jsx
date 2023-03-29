@@ -2,20 +2,19 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Fetch from '../../utils/Fetch';
+import NewsItem from '../NewsItem/NewsItem';
 
 const NewsList = ({ news, onUpdateNewsList }) => {
   const storeNews = useSelector((state) => state.news.news);
   const [newsList, setNewsList] = useState([]);
 
-  useEffect(()=> {
+  useEffect(() => {
     if (!storeNews.length) {
       setNewsList(news);
     } else {
       setNewsList(storeNews);
     }
-
-  }, [news, storeNews])
-
+  }, [news, storeNews]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,14 +31,7 @@ const NewsList = ({ news, onUpdateNewsList }) => {
           <Fetch
             key={storyId}
             uri={`https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`}
-            renderSuccess={({ data }) => (
-              <li>
-                title: {data.title} <br />
-                score: {data.score} <br />
-                by: {data.by} <br />
-                time: {data.time}
-              </li>
-            )}
+            renderSuccess={({ data }) => <NewsItem data={data} />}
           />
         ))}
       </ul>
