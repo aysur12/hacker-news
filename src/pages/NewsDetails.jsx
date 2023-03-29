@@ -9,7 +9,7 @@ const NewsDetails = () => {
   return (
     <section>
       <Fetch
-        uri={`https://hacker-news.firebaseio.com/v0/item/${params.newsId}.json`}
+        url={`https://hacker-news.firebaseio.com/v0/item/${params.newsId}.json`}
         renderSuccess={({ data }) => (
           <>
             <NewsItem data={data} />

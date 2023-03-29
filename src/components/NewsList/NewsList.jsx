@@ -18,7 +18,6 @@ const NewsList = ({ news, onUpdateNewsList }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log('update');
       onUpdateNewsList();
     }, 60000);
     return () => clearInterval(interval);
@@ -30,7 +29,7 @@ const NewsList = ({ news, onUpdateNewsList }) => {
         {newsList.map((storyId) => (
           <Fetch
             key={storyId}
-            uri={`https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`}
+            url={`https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`}
             renderSuccess={({ data }) => (
               <li>
                 <NewsItem data={data} />
