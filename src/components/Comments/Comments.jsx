@@ -11,18 +11,16 @@ const Comments = ({ data }) => {
   }, [kids]);
 
   return (
-    <>
+    <ul>
       {comments &&
         comments.map((storyId) => (
-          <ul>
-            <Fetch
-              key={storyId}
-              url={`https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`}
-              renderSuccess={({ data }) => <Comment data={data} />}
-            />
-          </ul>
+          <Fetch
+            key={storyId}
+            url={`https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`}
+            renderSuccess={({ data }) => <Comment data={data} />}
+          />
         ))}
-    </>
+    </ul>
   );
 };
 
