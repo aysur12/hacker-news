@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 
-import Fetch from '../utils/Fetch';
-import NewsContent from '../components/NewsContent/NewsContent';
-import Comments from '../components/Comments/Comments';
+import Fetch from '../../utils/Fetch';
+import NewsContent from '../../components/NewsContent/NewsContent';
+import Comments from '../../components/Comments/Comments';
 
 const NewsDetails = () => {
   const params = useParams();
@@ -12,8 +12,8 @@ const NewsDetails = () => {
         url={`https://hacker-news.firebaseio.com/v0/item/${params.newsId}.json`}
         renderSuccess={({ data }) => (
           <>
-            <NewsContent data={data}/>
-            <Comments data={data}/>
+            <NewsContent data={data} />
+            <Comments data={data} />
           </>
         )}
       />

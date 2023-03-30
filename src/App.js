@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
-import News from './pages/News';
-import NewsDetails from './pages/NewsDetails';
-import NotFound from './pages/NotFound';
+import News from './pages/News/News';
+import NewsDetails from './pages/NewsDetails/NewsDetails';
+import NotFound from './pages/NotFound/NotFound';
 import './App.scss';
 
 function App() {

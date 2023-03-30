@@ -1,17 +1,17 @@
 import LogoImg from '../../assets/hacker-news.svg';
-import style from './Header.module.scss';
+import styles from './Header.module.scss';
 
-const Header = (props) => {
+const Header = () => {
   return (
-    <header className={style['header']}>
-      <div className={style['header__container']}>
-        <div className={style['header__logo']}>
+    <header className={styles['header']}>
+      <div className={styles['header__container']}>
+        <div className={styles['header__logo']}>
           <img
-            className={style['header__logo-img']}
+            className={styles['header__logo-img']}
             src={LogoImg}
             alt="Logo Hacker News"
           />
-          <h1 className={style['header__title']}>Hacker News</h1>
+          <h1 className={styles['header__title']}>Hacker News</h1>
         </div>
       </div>
     </header>

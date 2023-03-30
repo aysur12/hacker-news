@@ -1,8 +1,8 @@
-// import styles from './NewsList.modules.scss';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Fetch from '../../utils/Fetch';
 import NewsItem from '../NewsItem/NewsItem';
+import styles from './NewsList.module.scss'
 
 const NewsList = ({ news, onUpdateNewsList }) => {
   const storeNews = useSelector((state) => state.news.news);
@@ -24,8 +24,8 @@ const NewsList = ({ news, onUpdateNewsList }) => {
   }, [onUpdateNewsList]);
 
   return (
-    <div>
-      <ul>
+    <div className={styles['news-list']}>
+      <ul className={styles['news-list__list']}>
         {newsList.map((storyId) => (
           <Fetch
             key={storyId}

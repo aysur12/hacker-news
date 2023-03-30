@@ -1,15 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header/Header';
-import style from './MainLayout.module.scss';
+import styles from './MainLayout.module.scss';
 
 const MainLayout = () => {
   return (
     <>
       <Header />
-      <main className={style['content']}>
-        <div className={style['content__container']}>
-          <Outlet />
-        </div>
+      <main className={styles['content']}>
+        <Outlet />
       </main>
     </>
   );
