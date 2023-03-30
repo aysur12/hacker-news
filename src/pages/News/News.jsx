@@ -19,18 +19,24 @@ const News = () => {
 
   return (
     <section className={styles['news']}>
-      <Button className={styles['news__upd-btn']} onClick={updateNewsList}>
+      <Button
+        className={styles['news__upd-btn']}
+        onClick={updateNewsList}
+        title="update news"
+      >
         <RiRefreshLine className={styles['news__upd-btn-content']} />
       </Button>
-      <Fetch
-        url={'https://hacker-news.firebaseio.com/v0/newstories.json'}
-        renderSuccess={({ data }) => (
-          <NewsList
-            news={data.slice(0, 100)}
-            onUpdateNewsList={updateNewsList}
-          />
-        )}
-      />
+      <div className={styles['news__list']}>
+        <Fetch
+          url={'https://hacker-news.firebaseio.com/v0/newstories.json'}
+          renderSuccess={({ data }) => (
+            <NewsList
+              news={data.slice(0, 100)}
+              onUpdateNewsList={updateNewsList}
+            />
+          )}
+        />
+      </div>
     </section>
   );
 };
