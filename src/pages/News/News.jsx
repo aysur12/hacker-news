@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { newsActions } from '../../store/newsSlice';
+import { RiRefreshLine } from 'react-icons/ri';
 import updateData from '../../utils/updateData';
 import Fetch from '../../utils/Fetch';
 import Button from '../../components/UI/Button';
@@ -18,7 +19,9 @@ const News = () => {
 
   return (
     <section className={styles['news']}>
-      <Button onClick={updateNewsList}>update news</Button>
+      <Button className={styles['news__upd-btn']} onClick={updateNewsList}>
+        <RiRefreshLine className={styles['news__upd-btn-content']} />
+      </Button>
       <Fetch
         url={'https://hacker-news.firebaseio.com/v0/newstories.json'}
         renderSuccess={({ data }) => (
