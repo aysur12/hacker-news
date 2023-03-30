@@ -6,8 +6,8 @@ View link: https://aysur12.github.io/wishlist/
 
 ___
 ## Features
-The ability to update newstories, as well as automatic updates once a minute
-Collapsible comment threads
+  + The ability to update newstories, as well as automatic updates once a minute
+  + Collapsible comment threads
 ___
 ## Building
 ##### Сloning repository
