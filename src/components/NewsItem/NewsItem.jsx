@@ -13,10 +13,10 @@ const NewsItem = ({ data }) => {
         <Link className={styles['news-item__link']} to={`new-story/${id}`}>{title}</Link>
       </div>
       <div className={styles['news-item__down-content']}>
-        <div>Score: {score}</div>
-        <div>Author: {by}</div>
-        <div>{unixTimeToDateTime(time)}</div>
-        <div>Comments count:{descendants}</div>
+        <div className={styles['news-item__info']}>Points: {score}</div>
+        <div className={styles['news-item__info']}>Author: {by}</div>
+        <div className={styles['news-item__info']}>Created: {unixTimeToDateTime(time)}</div>
+        <div className={styles['news-item__info']}>Comments:{descendants}</div>
       </div>
     </div>
   );
