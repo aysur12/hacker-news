@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/hacker-news" element={<MainLayout />}>
+          <Route path="/hacker-news/" element={<MainLayout />}>
             <Route index element={<News />} />
             <Route path="new-story/:newsId" element={<NewsDetails />} />
             <Route path="*" element={<NotFound />} />
