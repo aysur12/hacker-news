@@ -18,7 +18,9 @@ const Comments = ({ data }) => {
     updateData(
       `https://hacker-news.firebaseio.com/v0/item/${params.newsId}.json`
     ).then((newComments) =>
-      setComments(newComments.kids)
+      setComments(() => {
+        return newComments ? newComments.kids : comments;
+      })
     );
   };
 
