@@ -24,7 +24,7 @@ const News = () => {
         onClick={updateNewsList}
         title="update news"
       >
-        <RiRefreshLine className={styles['news__upd-btn-content']} />
+        <RiRefreshLine />
       </Button>
       <div className={styles['news__list']}>
         <Fetch

@@ -16,7 +16,7 @@ const NewsItem = ({ data }) => {
         <div className={styles['news-item__info']}>Points: {score}</div>
         <div className={styles['news-item__info']}>Author: {by}</div>
         <div className={styles['news-item__info']}>Created: {unixTimeToDateTime(time)}</div>
-        <div className={styles['news-item__info']}>Comments:{descendants}</div>
+        <div className={styles['news-item__info']}>Comments: {descendants}</div>
       </div>
     </div>
   );
