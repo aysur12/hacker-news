@@ -1,0 +1,25 @@
+.news-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #004643;
+  border-radius: 5px;
+
+  &__up-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__icon {
+    color: #e8e4e6;
+  }
+
+  &__link {
+    color: #fffffe;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

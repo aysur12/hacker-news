@@ -3,6 +3,9 @@
   max-width: 1440px;
 
   &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     list-style-type: none;
   }
 }
