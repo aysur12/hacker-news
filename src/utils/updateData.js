@@ -8,10 +8,7 @@ const updateData = async (url) => {
 
     const data = await response.json();
 
-    const dataArr = await Promise.all(data)
-    
-
-    return dataArr;
+    return data;
   } catch (error) {
     console.log(error.message);
   }

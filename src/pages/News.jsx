@@ -10,7 +10,7 @@ const News = () => {
 
   const updateNewsList = () => {
     updateData(
-      'https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty'
+      'https://hacker-news.firebaseio.com/v0/newstories.json'
     ).then((newstories) =>
       dispatchFunc(newsActions.setUpdateNews(newstories.slice(0, 100)))
     );

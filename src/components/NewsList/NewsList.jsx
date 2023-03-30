@@ -29,7 +29,7 @@ const NewsList = ({ news, onUpdateNewsList }) => {
         {newsList.map((storyId) => (
           <Fetch
             key={storyId}
-            url={`https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`}
+            url={`https://hacker-news.firebaseio.com/v0/item/${storyId}.json`}
             renderSuccess={({ data }) => (
               <li>
                 <NewsItem data={data} />
