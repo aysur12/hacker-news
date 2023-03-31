@@ -5,7 +5,7 @@ import unixTimeToDateTime from '../../utils/unixTimeToDateTime';
 const Comment = ({ data }) => {
   const [isVisibleComments, setIsVisibleComments] = useState(false);
 
-  const { by, time, text, kids, id } = data;
+  const { by, time, text, kids } = data;
 
   const toggleVisibilityHandler = () => {
     console.log('aaaa');
@@ -16,9 +16,8 @@ const Comment = ({ data }) => {
     <li onClick={toggleVisibilityHandler}>
       {text && (
         <div>
-          <p>{id}</p>
-          <p>{by}</p>
           <div>{unixTimeToDateTime(time)}</div>
+          <p>{by}</p>
           <div dangerouslySetInnerHTML={{ __html: text }} />
         </div>
       )}

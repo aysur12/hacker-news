@@ -31,7 +31,7 @@ const Comments = ({ data }) => {
       <Button onClick={updateCommentsHandler} title="update comments">
         <RiRefreshFill />
       </Button>
-      <ul>
+      <ul className={styles['comments__list']}>
         {comments &&
           comments.map((storyId) => (
             <Fetch
