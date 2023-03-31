@@ -29,7 +29,6 @@ const NewsContent = ({ data }) => {
         <div className={styles['news-content__up-block']}>
           <Link to="../.." relative="path">
             <Button
-              className={styles['news-content__return-btn']}
               title="back to news list"
             >
               <RiArrowGoBackLine />

@@ -5,6 +5,7 @@ import updateData from '../../utils/updateData';
 import Fetch from '../../utils/Fetch';
 import Comment from '../Comment/Comment';
 import Button from '../UI/Button';
+import styles from './Comments.module.scss';
 
 const Comments = ({ data }) => {
   const [comments, setComments] = useState([]);
@@ -26,8 +27,10 @@ const Comments = ({ data }) => {
   };
 
   return (
-    <>
-      <Button onClick={updateCommentsHandler} title='update comments'><RiRefreshFill/></Button>
+    <div className={styles['comments']}>
+      <Button onClick={updateCommentsHandler} title="update comments">
+        <RiRefreshFill />
+      </Button>
       <ul>
         {comments &&
           comments.map((storyId) => (
@@ -38,7 +41,7 @@ const Comments = ({ data }) => {
             />
           ))}
       </ul>
-    </>
+    </div>
   );
 };
 

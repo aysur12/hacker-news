@@ -20,7 +20,6 @@ const News = () => {
   return (
     <section className={styles['news']}>
       <Button
-        className={styles['news__upd-btn']}
         onClick={updateNewsList}
         title="update news"
       >
