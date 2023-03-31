@@ -10,7 +10,6 @@ const Comment = ({ data }) => {
 
   const toggleVisibilityHandler = () => {
     setIsVisibleComments(true);
-    console.log(kids);
   };
 
   return (
