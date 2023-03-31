@@ -9,8 +9,8 @@ const Comment = ({ data }) => {
   const { by, time, text, kids } = data;
 
   const toggleVisibilityHandler = () => {
-    console.log(isVisibleComments);
-    setIsVisibleComments(!isVisibleComments);
+    setIsVisibleComments(true);
+    console.log(kids);
   };
 
   return (
@@ -19,11 +19,17 @@ const Comment = ({ data }) => {
         <div className={styles['comment__content']}>
           <div className={styles['comment__heading']}>
             <p className={styles['comment__user']}>{by}</p>
-            <p className={styles['comment__date']}>
+            <p className={styles['comment__sub-info']}>
               {unixTimeToDateTime(time)}
             </p>
+            <p className={styles['comment__sub-info']}>
+              Replies: {kids ? kids.length : 0}
+            </p>
           </div>
-          <div className={styles['comment__text']} dangerouslySetInnerHTML={{ __html: text }} />
+          <div
+            className={styles['comment__text']}
+            dangerouslySetInnerHTML={{ __html: text }}
+          />
         </div>
       )}
       <ul className={styles['comment__sub-list']}>
