@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { RiRefreshFill } from 'react-icons/ri';
 import updateData from '../../utils/updateData';
 import Fetch from '../../utils/Fetch';
 import Comment from '../Comment/Comment';
@@ -26,7 +27,7 @@ const Comments = ({ data }) => {
 
   return (
     <>
-      <Button onClick={updateCommentsHandler}>Update comments</Button>
+      <Button onClick={updateCommentsHandler} title='update comments'><RiRefreshFill/></Button>
       <ul>
         {comments &&
           comments.map((storyId) => (

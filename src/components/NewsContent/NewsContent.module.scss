@@ -3,6 +3,8 @@
   flex-direction: column;
   gap: 25px;
   width: 100%;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #0f3433;
 
   &__announce {
     display: flex;
@@ -17,9 +19,6 @@
   }
 
   &__return-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 50px;
     height: 50px;
   }
@@ -48,21 +47,22 @@
 
   &__content-block {
     padding: 10px;
-    background-color: #e8e4e6;
+    background-color: #004643;
     border-radius: 5px;
   }
 
   &__text {
-    color: #0f3433;
+    color: #fffffe;
+    line-height: 1.9;
   }
 
   &__link {
-    color: #0f3433;
+    color: #fffffe;
     text-decoration: none;
     cursor: pointer;
 
     &:hover {
-      color: #e16162;
+      color: #f9bc60;
     }
   }
 }
