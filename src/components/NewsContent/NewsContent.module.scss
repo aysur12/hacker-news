@@ -48,7 +48,15 @@
 
   &__text {
     color: #fffffe;
-    line-height: 1.9;
+
+    & a {
+      color: #f9bc60;
+      text-decoration: none;
+    }
+
+    & p {
+      margin: 15px 0;
+    }
   }
 
   &__link {
