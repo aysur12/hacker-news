@@ -5,11 +5,16 @@
   width: 100%;
   padding-top: 20px;
 
+  &__loader {
+    margin: 0 auto 40px;
+  }
+
   &__list {
     list-style-type: none;
   }
 
   &__empty {
+    height: 20px;
     margin-bottom: 40px;
     text-align: center;
     color: #001e1d;
