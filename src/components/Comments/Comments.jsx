@@ -26,21 +26,27 @@ const Comments = ({ data }) => {
     );
   };
 
+  const noCommentsBlock = <p className={styles['comments__empty']}>No comments</p>;
+
   return (
     <div className={styles['comments']}>
       <Button onClick={updateCommentsHandler} title="update comments">
         <RiRefreshFill />
       </Button>
-      <ul className={styles['comments__list']}>
-        {comments &&
-          comments.map((storyId) => (
-            <Fetch
-              key={storyId}
-              url={`https://hacker-news.firebaseio.com/v0/item/${storyId}.json`}
-              renderSuccess={({ data }) => <Comment data={data} />}
-            />
-          ))}
-      </ul>
+      {comments ? (
+        <ul className={styles['comments__list']}>
+          {comments &&
+            comments.map((storyId) => (
+              <Fetch
+                key={storyId}
+                url={`https://hacker-news.firebaseio.com/v0/item/${storyId}.json`}
+                renderSuccess={({ data }) => <Comment data={data} />}
+              />
+            ))}
+        </ul>
+      ) : (
+        noCommentsBlock
+      )}
     </div>
   );
 };
