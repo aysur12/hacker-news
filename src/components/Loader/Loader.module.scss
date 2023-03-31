@@ -1,0 +1,37 @@
+.loader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80px;
+  background-color: transparent;
+
+  &__pulse-bubble {
+    width: 20px;
+    height: 20px;
+    background-color: #004643;
+    border-radius: 50%;
+
+    &_1 {
+      animation: pulse .4s ease 0s infinite alternate;
+    }
+
+    &_2 {
+      animation: pulse .4s ease .2s infinite alternate;
+    }
+
+    &_3 {
+      animation: pulse .4s ease .4s infinite alternate;
+    }
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: .25;
+    transform: scale(.75);
+  }
+}

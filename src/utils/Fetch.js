@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Loader from "../components/Loader/Loader";
 
 const useFetch = (url) => {
   const [data, setData] = useState();
@@ -24,7 +25,7 @@ const useFetch = (url) => {
 const Fetch = ({
   url,
   renderSuccess,
-  loadingFallback = <p>loading...</p>,
+  loadingFallback = <Loader/>,
   renderError = error => <pre>{JSON.stringify(error, null, 2)}</pre>
 }) => {
   const { loading, data, error } = useFetch(url);

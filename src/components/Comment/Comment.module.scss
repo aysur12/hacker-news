@@ -1,0 +1,38 @@
+.comment {
+  padding: 10px;
+  background-color: #e8e4e6;
+  border-radius: 4px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__user {
+    color: #001e1d;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__date {
+    color: #001e1d;
+    font-size: 12px;
+  }
+
+  &__text {
+    color: #0f3433;
+  }
+
+  &__sub-list {
+    border-left: 1px solid #004643;
+    list-style-type: none;
+    margin: 10px 0 0 30px;
+  }
+}

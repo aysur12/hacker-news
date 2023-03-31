@@ -8,7 +8,7 @@ const NewsContent = ({ data }) => {
   const { url, text, title, by, time, descendants } = data;
 
   const content = text ? (
-    <p
+    <div
       className={styles['news-content__text']}
       dangerouslySetInnerHTML={{ __html: text }}
     />
