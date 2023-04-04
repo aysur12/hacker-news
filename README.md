@@ -2,7 +2,7 @@
 
 Implementation of newstories Hacker News based on React and react-router using Firebase API.
 ___
-View link: https://aysur12.github.io/wishlist/
+View link: https://aysur12.github.io/hacker-news/
 
 ___
 ## Features
